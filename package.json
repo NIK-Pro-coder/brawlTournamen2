@@ -1,0 +1,16 @@
+{
+  "name": "brawltournamen2",
+  "version": "1.0.0",
+  "description": "A website to host Brawl Stars tournaments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikolai Carnaghi",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.21.1",
+    "path": "^0.12.7"
+  }
+}
