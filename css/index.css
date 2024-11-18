@@ -1,0 +1,13 @@
+form {
+	margin-left: 20px;
+}
+
+.error {
+	padding: 5px;
+	background: rgba(255, 0, 0, 0.7);
+}
+
+ul {
+	list-style-type: none;
+	cursor: pointer;
+}

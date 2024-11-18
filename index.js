@@ -40,6 +40,17 @@ app.get("/", function (req, res) {
 	res.send("index.html");
 });
 
+app.get("/getPlayer/:tag", function (req, res) {
+	const tag = req.params.tag;
+	runPythonScript("scripts/backend.py", ["getPlayer", tag], (err, result) => {
+		if (err) {
+			res.status(500).send(err);
+		} else {
+			res.send(JSON.parse(result));
+		}
+	});
+});
+
 //Open the server
 const http = require("http").createServer(app);
 

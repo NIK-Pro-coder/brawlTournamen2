@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/index.css" />
+		<script src="scripts/index.js"></script>
+
+		<title>Brawl Tournamen 2</title>
+	</head>
+	<body>
+		<h1>Brawl Tournamen 2</h1>
+
+		<form>
+			<p class="error" id="emptyName" hidden>Please specify team name</p>
+			<p class="error" id="alreadyTeam" hidden>Team already exists</p>
+
+			<label for="teamAddInput">Add team</label>
+
+			<br />
+
+			<input id="teamAddInput" placeholder="Team name" />
+			<button onclick="addTeam()" type="button">Add</button>
+		</form>
+
+		<br />
+
+		<form>
+			<p class="error" id="noTeam" hidden>Please specify a team</p>
+			<p class="error" id="noTag" hidden>Please specify a tag</p>
+			<p class="error" id="invalidTag" hidden>Specified tag is invalid</p>
+			<p class="error" id="alreadyTag" hidden>
+				Specified tag is already in a team
+			</p>
+
+			<label for="playerTagInput">Add player to </label>
+			<select name="teams" id="teamSelector">
+				<option disabled>Select team</option>
+			</select>
+
+			<br />
+
+			<input id="playerTagInput" placeholder="Player tag" />
+			<button onclick="addPlayer()" type="button">Add</button>
+		</form>
+
+		<br />
+
+		<h3>Teams</h3>
+		<ul id="teamList"></ul>
+	</body>
+</html>
