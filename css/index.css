@@ -11,3 +11,12 @@ ul {
 	list-style-type: none;
 	cursor: pointer;
 }
+
+ol {
+	cursor: pointer;
+	line-height: 2em;
+}
+
+h3 {
+	margin-left: 10px;
+}

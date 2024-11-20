@@ -85,6 +85,14 @@ async function addPlayer() {
 	const resp = await fetch(`/getPlayer/${tag}`);
 	const player = await resp.json();
 
+	if ("reason" in player) {
+		document.getElementById("invalidTag").hidden = false;
+		let element = document.getElementById(tag.toLowerCase());
+		element.parentNode.removeChild(element);
+		return;
+	}
+	document.getElementById("invalidTag").hidden = true;
+
 	teams[team].members.push({
 		tag: player.tag.toLowerCase(),
 		name: player.name,
@@ -93,9 +101,13 @@ async function addPlayer() {
 	me.innerHTML = `${player.name} (${player.tag.toLowerCase()})`;
 	me.onclick = () => {
 		setTimeout(() => {
-			let element = document.getElementById(player.tag.toLowerCase());
+			let element = document.getElementById(tag.toLowerCase());
 			element.parentNode.removeChild(element);
-			tagsSeen.splice(tagsSeen.indexOf(player.tag.toLowerCase()), 1);
+			tagsSeen.splice(tagsSeen.indexOf(tag.toLowerCase()), 1);
 		}, 1);
 	};
+}
+
+function startTournamen() {
+	console.log(teams);
 }
